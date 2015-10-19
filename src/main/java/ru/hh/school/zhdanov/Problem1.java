@@ -20,16 +20,16 @@ public class Problem1 {
 				.println("Найдите минимальное расстояние между двумя точками из этого набора.");
 		ArrayList<Point> pointsList = new ArrayList<Point>();
 		getListFromFile(pointsList);
-		System.out.println("min brute: " + brute(pointsList));
-		divideAndConquer(pointsList);
+//		System.out.println("min brute: " + brute(pointsList));
+		System.out.println("min distanse is: " + divideAndConquer(pointsList));
 	}
 
-	private static void divideAndConquer(ArrayList<Point> pointsList) {
+	private static double divideAndConquer(ArrayList<Point> pointsList) {
 	    List<Point> pointsSortedByX = new ArrayList<Point>(pointsList);
 	    sortByX(pointsSortedByX);
 	    List<Point> pointsSortedByY = new ArrayList<Point>(pointsList);
 	    sortByY(pointsSortedByY);
-	    System.out.println(divideAndConquer(pointsSortedByX, pointsSortedByY));		
+	    return divideAndConquer(pointsSortedByX, pointsSortedByY);		
 	}
 
 	private static double divideAndConquer(
@@ -37,7 +37,7 @@ public class Problem1 {
 			List<Point> pointsSortedByY) {
 		int numPoints = pointsSortedByX.size();
 	    if (numPoints <= 3) {
-	      return brute((ArrayList<Point>) pointsSortedByX);
+	      return brute(pointsSortedByX);
 	    }
 	    
 	    int dividingIndex = numPoints >>> 1;
@@ -114,12 +114,12 @@ public class Problem1 {
 	    );		
 	}
 
-	private static double brute(ArrayList<Point> pointsList) {
+	private static double brute(List<Point> pointsList) {
 		if (pointsList.size() < 2) {
 			System.err.println("There are not enough points specified.");
 			return 0;
 		}
-		double minDistance = pointsList.get(1).distance(pointsList.get(2));
+		double minDistance = pointsList.get(0).distance(pointsList.get(1));
 		double curDistance = 0;
 		for (int i = 0; i < pointsList.size(); i++) {
 			for (int j = i + 1; j < pointsList.size(); j++) {

@@ -24,7 +24,7 @@ public class Problem2 {
 		ArrayList<String> searchList = new ArrayList<String>();
 		getListFromFile(searchList);
 		brute(searchList);
-		intelecSearch(searchList);
+//		intelecSearch(searchList);
 	}
 
 	private static void intelecSearch(ArrayList<String> searchList) {
