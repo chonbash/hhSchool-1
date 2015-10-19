@@ -9,7 +9,7 @@ public class Round2 {
 		System.out.println();
 		System.out.println("-------------------------------------------------------------------");
 		System.out.println();
-//		Problem2.run();
+		Problem2.run();
 		
 
 	}

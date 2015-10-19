@@ -46,7 +46,6 @@ public class Problem2 {
 					break;
 				}
 				n++;
-				System.out.println(n);
 				s = s + n.toString();
 			}
 		}
