@@ -24,6 +24,12 @@ public class Problem2 {
 		ArrayList<String> searchList = new ArrayList<String>();
 		getListFromFile(searchList);
 		brute(searchList);
+		intelecSearch(searchList);
+	}
+
+	private static void intelecSearch(ArrayList<String> searchList) {
+		
+		
 	}
 
 	private static void brute(ArrayList<String> searchList) {
@@ -62,6 +68,10 @@ public class Problem2 {
 			}
 		}
 
+	}
+	
+	public static String getS() {
+		return s;
 	}
 
 }
